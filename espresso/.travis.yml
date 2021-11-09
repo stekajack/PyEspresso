@@ -1,0 +1,16 @@
+language: generic
+
+branches:
+  except:
+  - staging.tmp
+  - trying.tmp
+
+
+matrix:
+  include:
+    - os: linux
+      sudo: required
+      services: docker
+
+script:
+  - maintainer/CI/build_docker.sh
